@@ -24,19 +24,25 @@
  */
 
 #import "cocos2d.h"
-
+#import <Parse/Parse.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+#import <FacebookSDK/FacebookSDK.h>
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 
 @implementation AppController
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Configure Cocos2d with the options set in SpriteBuilder
     NSString* configPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Published-iOS"]; // TODO: add support for Published-Android support
     configPath = [configPath stringByAppendingPathComponent:@"configCocos2d.plist"];
     
     NSMutableDictionary* cocos2dSetup = [NSMutableDictionary dictionaryWithContentsOfFile:configPath];
+    
+    //Setting parse app
+    [Parse setApplicationId:@"RCxziVoFTP7UMIzu56GoMLsD1XWYvSdyEtPbhZVO"
+                  clientKey:@"Y5QIedvadd0KYslR6t1HrkKumC6mGQ8cjEoQFK1j"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     // Note: this needs to happen before configureCCFileUtils is called, because we need apportable to correctly setup the screen scale factor.
 #ifdef APPORTABLE

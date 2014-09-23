@@ -24,6 +24,8 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+#import <Parse/Parse.h>
 #import "cocos2d.h"
 
 @interface AppController : CCAppDelegate
