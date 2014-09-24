@@ -1072,7 +1072,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string>parksideBad</string>
+									<string>parksideMedium</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -1327,6 +1327,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -4379,8 +4381,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>

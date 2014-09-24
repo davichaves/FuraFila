@@ -94,27 +94,109 @@
 }
 
 - (void) cafe84Bad {
-    
+    if ([cafe84Status floatValue] > 0.7) {
+        cafe84Status = [NSNumber numberWithFloat:[cafe84Status floatValue]*0.7];
+    } else if ([cafe84Status floatValue] > 0.3) {
+        cafe84Status = [NSNumber numberWithFloat:[cafe84Status floatValue]*0.8];
+    } else {
+        cafe84Status = [NSNumber numberWithFloat:[cafe84Status floatValue]*0.9];
+    }
+    PFQuery *query = [PFQuery queryWithClassName:@"status"];
+    [query getObjectInBackgroundWithId:@"4FZJk3iZYo" block:^(PFObject *status, NSError *error) {
+        status[@"cafe84"] = cafe84Status;
+        [status saveInBackground];
+        // Do something with the returned PFObject in the gameScore variable.
+    }];
 }
 
 - (void) cafe84Medium {
-    
+    if ([cafe84Status floatValue] > 0.7) {
+        cafe84Status = [NSNumber numberWithFloat:[cafe84Status floatValue]*0.9];
+    } else if ([cafe84Status floatValue] > 0.5) {
+        cafe84Status = [NSNumber numberWithFloat:[cafe84Status floatValue]*0.95];
+    } else if ([cafe84Status floatValue] > 0.3) {
+        cafe84Status = [NSNumber numberWithFloat:[cafe84Status floatValue]*1.05];
+    } else {
+        cafe84Status = [NSNumber numberWithFloat:[cafe84Status floatValue]*1.1];
+    }
+    PFQuery *query = [PFQuery queryWithClassName:@"status"];
+    [query getObjectInBackgroundWithId:@"4FZJk3iZYo" block:^(PFObject *status, NSError *error) {
+        status[@"cafe84"] = cafe84Status;
+        [status saveInBackground];
+        // Do something with the returned PFObject in the gameScore variable.
+    }];
 }
 
 - (void) cafe84Good {
-    
+    if ([cafe84Status floatValue] > 0.7) {
+        cafe84Status = [NSNumber numberWithFloat:[cafe84Status floatValue]*1.1];
+        if ([cafe84Status floatValue] > 1) {
+            cafe84Status = [NSNumber numberWithFloat:1];
+        }
+    } else if ([cafe84Status floatValue] > 0.3) {
+        cafe84Status = [NSNumber numberWithFloat:[cafe84Status floatValue]*1.2];
+    } else {
+        cafe84Status = [NSNumber numberWithFloat:[cafe84Status floatValue]*1.3];
+    }
+    PFQuery *query = [PFQuery queryWithClassName:@"status"];
+    [query getObjectInBackgroundWithId:@"4FZJk3iZYo" block:^(PFObject *status, NSError *error) {
+        status[@"cafe84"] = cafe84Status;
+        [status saveInBackground];
+        // Do something with the returned PFObject in the gameScore variable.
+    }];
 }
 
 - (void) evkBad {
-    
+    if ([evkStatus floatValue] > 0.7) {
+        evkStatus = [NSNumber numberWithFloat:[evkStatus floatValue]*0.7];
+    } else if ([evkStatus floatValue] > 0.3) {
+        evkStatus = [NSNumber numberWithFloat:[evkStatus floatValue]*0.8];
+    } else {
+        evkStatus = [NSNumber numberWithFloat:[evkStatus floatValue]*0.9];
+    }
+    PFQuery *query = [PFQuery queryWithClassName:@"status"];
+    [query getObjectInBackgroundWithId:@"4FZJk3iZYo" block:^(PFObject *status, NSError *error) {
+        status[@"evk"] = evkStatus;
+        [status saveInBackground];
+        // Do something with the returned PFObject in the gameScore variable.
+    }];
 }
 
 - (void) evkMedium {
-    
+    if ([evkStatus floatValue] > 0.7) {
+        evkStatus = [NSNumber numberWithFloat:[evkStatus floatValue]*0.9];
+    } else if ([evkStatus floatValue] > 0.5) {
+        evkStatus = [NSNumber numberWithFloat:[evkStatus floatValue]*0.95];
+    } else if ([evkStatus floatValue] > 0.3) {
+        evkStatus = [NSNumber numberWithFloat:[evkStatus floatValue]*1.05];
+    } else {
+        evkStatus = [NSNumber numberWithFloat:[evkStatus floatValue]*1.1];
+    }
+    PFQuery *query = [PFQuery queryWithClassName:@"status"];
+    [query getObjectInBackgroundWithId:@"4FZJk3iZYo" block:^(PFObject *status, NSError *error) {
+        status[@"evk"] = evkStatus;
+        [status saveInBackground];
+        // Do something with the returned PFObject in the gameScore variable.
+    }];
 }
 
 - (void) evkGood {
-    
+    if ([evkStatus floatValue] > 0.7) {
+        evkStatus = [NSNumber numberWithFloat:[evkStatus floatValue]*1.1];
+        if ([evkStatus floatValue] > 1) {
+            evkStatus = [NSNumber numberWithFloat:1];
+        }
+    } else if ([evkStatus floatValue] > 0.3) {
+        evkStatus = [NSNumber numberWithFloat:[evkStatus floatValue]*1.2];
+    } else {
+        evkStatus = [NSNumber numberWithFloat:[evkStatus floatValue]*1.3];
+    }
+    PFQuery *query = [PFQuery queryWithClassName:@"status"];
+    [query getObjectInBackgroundWithId:@"4FZJk3iZYo" block:^(PFObject *status, NSError *error) {
+        status[@"evk"] = evkStatus;
+        [status saveInBackground];
+        // Do something with the returned PFObject in the gameScore variable.
+    }];
 }
 
 - (void) statusBarChange:(CCNodeColor*)bar forTheStatusNumber:(NSNumber*)status {
